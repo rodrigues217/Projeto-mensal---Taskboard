@@ -1,0 +1,326 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    background-color: #0079bf;
+    color: white;
+    padding: 5px;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin: 15px;
+    background-color: #cecfcf;
+    border-radius: 25px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+    flex-wrap: wrap;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.dropdown {
+    margin: 1rem;
+    position: relative;
+    width: 50px;
+}
+
+#dropdown-content {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #a1d4d6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 1000;
+}
+
+#dropdown-content li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#dropdown-content li:hover {
+    background-color: #f4f4f4;
+}
+
+#column-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    margin: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tasks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.delete-column-btn {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-column-btn:hover {
+    background-color: #d93636;
+    transform: scale(1.1);
+    box-shadow:  0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.delete-button:active {
+    background-color: #b82e2e;
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.column {
+    background-color: #0056b3;
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+    flex-shrink: 0;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column h3 {
+    color: white;
+    text-transform: capitalize;
+}
+
+.task div {
+    width: 100%;
+}
+
+.tasks-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.task {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.separador {
+    border-top: 2px solid #333;
+    margin: 20px auto;
+    width: 80%;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .header {
+    background-color: #272525;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode .dropdown {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+body.dark-mode .column {
+    background-color: #3b3b3b;
+}
+
+body.dark-mode .task {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark-mode .task:hover {
+    background-color: #444;
+}
+
+body.dark-mode .navbar .navbar-left,
+body.dark-mode .navbar .navbar-right {
+    color: white;
+}
+
+body.dark-mode #dropdown-content {
+    background-color: #3b3b3b;
+    color: white;
+}
+
+body.dark-mode .modal-content {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+body.dark-mode .close {
+    color: white;
+}
+
+body.dark-mode #toggle-mode {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode #submit-column {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode #add-column-btn {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode #dropdown-content li:hover {
+    background-color: #444;
+}
+
+/* Estilo para o Modal (cubo flutuante) */
+.modal {
+    display: none; /* Inicialmente invisível */
+    position: fixed;
+    z-index: 1; /* Fica sobre os outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+}
+
+/* O conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* O botão de fechar (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Formulário */
+#create-column-form input,
+#create-column-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo do botão de criar coluna */
+#submit-column {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+#submit-column:hover {
+    background-color: #0056b3;
+}
+#add-column-button{
+    margin: 20px;
+    
+}
+
+#add-column-btn {
+    background-color: #0056b3; /* Mesma cor dos boards */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 250px; /* Mesma largura dos boards */
+    height: 40px; /* Mais fino que a altura do board */
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    display: none; /* Inicialmente escondido */
+    
+}
+
+#add-column-btn:hover {
+    background-color: #64a977; /* Cor de hover mais clara */
+
+}  
+
+#boardId{
+    margin: 5px;
+}

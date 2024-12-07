@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-color: #000000; /* Cor de fundo da página */
+  font-family: Arial, sans-serif; /* Define uma fonte padrão */
+}
+.login-container {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.login-container button:active {
+  scale: 0.95;
+}
+
+.login-container .logo-container {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.login-container .login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.login-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-container .form-group input {
+  width: 90%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+}
+
+.login-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.login-container .form-group input:focus {
+  outline: none;
+  border-color: #1778f2;
+}
+
+.login-container .form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #fff;
+  background-color: #212121;
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.login-container .form-submit-btn:hover {
+  background-color: #313131;
+}
+
+.login-container .link {
+  color: #1778f2;
+  text-decoration: none;
+}
+
+.login-container .signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.login-container .signup-link .link {
+  font-weight: 400;
+}
+
+.login-container .link:hover {
+  text-decoration: underline;
+}
+
+
+  #error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

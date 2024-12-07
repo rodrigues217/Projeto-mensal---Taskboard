@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskBoard</title>
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/taskBoard.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Trello Diferente</h1>
+  </header>
+  <section>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <!-- Grupo à esquerda -->
+        <div class="navbar-left">
+          <div class="dropdown">
+            <button id="dropdown-button">Selecionar os Boards</button>
+            <ul id="dropdown-content" style="display: none;">
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Grupo à direita -->
+        <div class="navbar-right">
+          <div id="email-display"></div>
+          <div id="LogOut">
+             <h2>Log out</h2>
+          </div>
+          <div class="separador"></div>
+          <button id="toggle-mode">Modo Escuro</button>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <h1>Colunas</h1>  
+  <button id="add-column-button">Adicionar Nova Coluna</button>
+
+  <div id="column-container"></div>
+  </div>
+
+<br>
+
+<!-- Modal (cubo flutuante) -->
+<div id="column-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <h2>Criar Nova Coluna</h2>
+        <form id="create-column-form">
+            <label for="boardId">Board ID</label>
+            <input type="number" id="boardId" name="boardId" value="1" required>
+
+            <label for="name">Nome da Coluna</label>
+            <input type="text" id="name" name="name" placeholder="Nome da coluna" required>
+
+            <label for="position">Posição</label>
+            <input type="number" id="position" name="position" value="0" required>
+
+            <button type="submit" id="submit-column">Criar Coluna</button>
+        </form>
+        <div class="message" id="responseMessage"></div>
+    </div>
+
+  <script type="module" src="./scripts/pages/taskBoard.js"></script>
+  <script type="module" src="./scripts/pages/emails.js"></script>
+
+</body>
+</html>
